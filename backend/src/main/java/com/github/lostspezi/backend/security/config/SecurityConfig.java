@@ -34,7 +34,8 @@ public class SecurityConfig {
                                 userInfo.userService(discordOAuth2UserService)
                         )
                         .defaultSuccessUrl(frontendUrl, true)
-                );
+                )
+                .logout(logout -> logout.logoutSuccessUrl(frontendUrl + "/login"));
 
         return http.build();
     }
