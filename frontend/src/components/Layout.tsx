@@ -79,10 +79,10 @@ export default function Layout({user, darkMode, toggleDarkMode}: Readonly<Layout
 
                         <button
                             onClick={() => setOpen(!open)}
-                            className="rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                            className="rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-400 cursor-pointer"
                         >
                             <img
-                                className="h-9 w-9 rounded-full object-cover ring-1 ring-stone-300 dark:ring-slate-500 cursor-pointer"
+                                className="h-9 w-9 rounded-full object-cover ring-1 ring-stone-300 dark:ring-slate-500"
                                 src={user.avatarUrl}
                                 alt={user.username}
                             />
