@@ -1,6 +1,6 @@
 import {NavLink} from "react-router-dom";
-import {GiAnvil, GiMiner} from "react-icons/gi";
-import {HiChevronDoubleLeft, HiSwitchHorizontal} from "react-icons/hi";
+import {GiAnvil, GiCampfire, GiMiner} from "react-icons/gi";
+import {HiChevronDoubleLeft, HiLockClosed, HiSwitchHorizontal} from "react-icons/hi";
 import {useState} from "react";
 
 type SidebarProps = {
@@ -14,6 +14,23 @@ export default function Sidebar({
                                 }: Readonly<SidebarProps>) {
     const [collapsed, setCollapsed] = useState<boolean>(false);
     const isRight: boolean = position === "right";
+    const isSmelterLocked = true;
+
+    const getSmelterClasses = (isActive: boolean) => {
+        if (isSmelterLocked) {
+            return [
+                "opacity-40",
+                "cursor-not-allowed",
+                "pointer-events-none",
+            ].join(" ");
+        }
+
+        if (isActive) {
+            return "bg-emerald-500 text-white";
+        }
+
+        return "hover:bg-stone-200 dark:hover:bg-slate-700";
+    };
 
     const shouldRotateCollapseIcon = (): boolean => {
         // HiChevronDoubleLeft points LEFT by default.
@@ -37,6 +54,23 @@ export default function Sidebar({
             {/* NAV */}
             <nav className={`space-y-2 p-2 ${isRight ? "items-end text-right" : ""}`}>
                 <NavLink
+                    to="/"
+                    className={({isActive}) =>
+                        [
+                            "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors",
+                            isRight ? "justify-end" : "",
+                            isActive
+                                ? "bg-emerald-500 text-white"
+                                : "hover:bg-stone-200 dark:hover:bg-slate-700",
+                        ].join(" ")
+                    }
+                >
+                    {!isRight && <GiCampfire size={20}/>}
+                    {!collapsed && <span className="hidden sm:inline">Dashboard</span>}
+                    {isRight && <GiCampfire size={20}/>}
+                </NavLink>
+
+                <NavLink
                     to="/miner"
                     className={({isActive}) =>
                         [
@@ -54,21 +88,47 @@ export default function Sidebar({
                 </NavLink>
 
                 <NavLink
-                    to="/smelter"
+                    to={isSmelterLocked ? "#" : "/smelter"}
+                    onClick={(e) => {
+                        if (isSmelterLocked) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }
+                    }}
+                    aria-disabled={isSmelterLocked}
+                    title={isSmelterLocked ? "Unlocks later" : "Open smelter"}
                     className={({isActive}) =>
                         [
                             "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors",
                             isRight ? "justify-end" : "",
-                            isActive
-                                ? "bg-emerald-500 text-white"
-                                : "hover:bg-stone-200 dark:hover:bg-slate-700",
+                            getSmelterClasses(isActive),
                         ].join(" ")
                     }
                 >
+                    {/* LEFT ICON */}
                     {!isRight && <GiAnvil size={20}/>}
-                    {!collapsed && <span className="hidden sm:inline">Smelter</span>}
+
+                    {/* LABEL */}
+                    {!collapsed && !isRight && (
+                        <span className="hidden sm:flex items-center gap-2">
+            Smelter
+                            {isSmelterLocked && (
+                                <HiLockClosed className="text-xs opacity-70"/>
+                            )}
+        </span>
+                    )}
+
+                    {/* RIGHT ICON */}
+
+                    {/* LABEL */}
+                    {!collapsed && isRight && (
+                        <span className="hidden sm:flex items-center gap-2">{isSmelterLocked && (
+                            <HiLockClosed className="text-xs opacity-70"/>
+                        )}Smelter</span>
+                    )}
                     {isRight && <GiAnvil size={20}/>}
                 </NavLink>
+
             </nav>
 
             {/* BOTTOM ACTIONS */}
