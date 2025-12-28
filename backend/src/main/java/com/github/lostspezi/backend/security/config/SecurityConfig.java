@@ -1,6 +1,8 @@
-package com.github.lostspezi.backend.security;
+package com.github.lostspezi.backend.security.config;
 
+import com.github.lostspezi.backend.security.service.DiscordOAuth2UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,6 +17,9 @@ public class SecurityConfig {
 
     private final DiscordOAuth2UserService discordOAuth2UserService;
 
+    @Value("${app.url}")
+    private String frontendUrl;
+
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) {
         http
@@ -28,6 +33,7 @@ public class SecurityConfig {
                         .userInfoEndpoint(userInfo ->
                                 userInfo.userService(discordOAuth2UserService)
                         )
+                        .defaultSuccessUrl(frontendUrl, true)
                 );
 
         return http.build();

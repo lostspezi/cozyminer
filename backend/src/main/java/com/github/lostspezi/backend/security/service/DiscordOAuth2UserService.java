@@ -1,4 +1,4 @@
-package com.github.lostspezi.backend.security;
+package com.github.lostspezi.backend.security.service;
 
 import com.github.lostspezi.backend.user.AppUser;
 import com.github.lostspezi.backend.user.AppUserRepository;
