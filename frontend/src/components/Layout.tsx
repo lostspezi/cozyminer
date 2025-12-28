@@ -52,7 +52,13 @@ export default function Layout({user, darkMode, toggleDarkMode}: Readonly<Layout
     return (
         <div className="flex min-h-screen flex-col bg-stone-50 dark:bg-slate-900 text-stone-800 dark:text-slate-100">
             <header
-                className="border-b border-stone-200 dark:border-slate-700 bg-stone-100 dark:bg-slate-800 px-6 py-4">
+                className="
+    relative z-30
+    border-b border-stone-200 dark:border-slate-700
+    bg-stone-100 dark:bg-slate-800
+    px-6 py-4
+  "
+            >
                 <nav className="grid grid-cols-3 items-center">
                     {/* LEFT */}
                     <div className="font-semibold tracking-wide">
@@ -91,17 +97,14 @@ export default function Layout({user, darkMode, toggleDarkMode}: Readonly<Layout
                         {/* DROPDOWN */}
                         <div
                             className={`
-            absolute right-0 top-12 w-52 rounded-lg
-            bg-white dark:bg-slate-700
-            border border-stone-200 dark:border-slate-600
-            shadow-xl
-            transform transition-all duration-200 ease-out
-            ${
-                                open
-                                    ? "scale-100 opacity-100"
-                                    : "pointer-events-none scale-95 opacity-0"
-                            }
-          `}
+    absolute right-0 top-12 w-52 rounded-lg
+    bg-white dark:bg-slate-700
+    border border-stone-200 dark:border-slate-600
+    shadow-xl
+    z-50
+    transform transition-all duration-200 ease-out
+    ${open ? "scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0"}
+  `}
                         >
                             <ul className="py-1">
                                 <li>

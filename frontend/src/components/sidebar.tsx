@@ -43,7 +43,7 @@ export default function Sidebar({
     return (
         <aside
             className={[
-                "relative shrink-0 transition-all duration-300 ease-out",
+                "relative z-20 shrink-0 transition-all duration-300 ease-out",
                 "bg-stone-100 dark:bg-slate-800",
                 "border-stone-200 dark:border-slate-700",
                 isRight ? "border-l" : "border-r",
