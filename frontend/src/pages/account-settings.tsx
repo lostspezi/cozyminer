@@ -1,10 +1,7 @@
-import type {User} from "../types/user.ts";
+import Title from "../components/title.tsx";
 
-type AccountSettingsProps = {
-    user: User;
-};
-export default function AccountSettings({user}: Readonly<AccountSettingsProps>) {
+export default function AccountSettings() {
     return (
-        <div>Account Settings for {user.username}</div>
+        <Title headliner="Account Settings" subtext="Manage your account settings and preferences."/>
     );
 }

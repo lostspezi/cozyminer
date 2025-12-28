@@ -9,6 +9,8 @@ import type {User} from "./types/user";
 import AccountSettings from "./pages/account-settings.tsx";
 import NotFound from "./pages/not-found.tsx";
 import FullscreenLoader from "./components/FullScreenLoader.tsx";
+import Miner from "./pages/miner.tsx";
+import Dashboard from "./pages/dashboard.tsx";
 
 const THEME_KEY = "cozy-theme";
 
@@ -55,8 +57,9 @@ export default function App() {
                         />
                     }
                 >
-                    <Route path="/" element={<h1>Welcome back, {user?.username}!</h1>}/>
-                    <Route path="/account-settings" element={<AccountSettings user={user!}/>}/>
+                    <Route path="/" element={<Dashboard user={user!}/>}/>
+                    <Route path="/account-settings" element={<AccountSettings/>}/>
+                    <Route path="/miner" element={<Miner/>}/>
                 </Route>
             </Route>
         </Routes>
