@@ -2,15 +2,15 @@ import {Route, Routes} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-import Login from "./pages/login";
-import ProtectedRoutes from "./components/ProtectedRoutes";
-import Layout from "./components/Layout";
+import LoginPage from "./pages/user/login.page.tsx";
+import ProtectedRoutes from "./routing/protected-routes.tsx";
+import Layout from "./components/layout/layout.tsx";
 import type {User} from "./types/user";
-import AccountSettings from "./pages/account-settings.tsx";
-import NotFound from "./pages/not-found.tsx";
-import FullscreenLoader from "./components/FullScreenLoader.tsx";
-import Miner from "./pages/miner.tsx";
-import Dashboard from "./pages/dashboard.tsx";
+import AccountSettingsPage from "./pages/user/account-settings.page.tsx";
+import NotFoundPage from "./pages/error/not-found.page.tsx";
+import FullScreenLoader from "./components/loading/full-screen-loader.tsx";
+import MinerPage from "./pages/miner/miner.page.tsx";
+import DashboardPage from "./pages/home/dashboard.page.tsx";
 
 const THEME_KEY = "cozy-theme";
 
@@ -40,12 +40,13 @@ export default function App() {
             .finally(() => setLoading(false));
     }, []);
 
-    if (loading) return <FullscreenLoader/>;
+    if (loading) return <FullScreenLoader/>;
 
     return (
         <Routes>
-            <Route path="/login" element={<Login user={user} toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>}/>
-            <Route path="*" element={<NotFound/>}/>
+            <Route path="/login"
+                   element={<LoginPage user={user} toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>}/>
+            <Route path="*" element={<NotFoundPage/>}/>
 
             <Route element={<ProtectedRoutes user={user}/>}>
                 <Route
@@ -57,9 +58,9 @@ export default function App() {
                         />
                     }
                 >
-                    <Route path="/" element={<Dashboard user={user!}/>}/>
-                    <Route path="/account-settings" element={<AccountSettings/>}/>
-                    <Route path="/miner" element={<Miner/>}/>
+                    <Route path="/" element={<DashboardPage user={user!}/>}/>
+                    <Route path="/account-settings" element={<AccountSettingsPage/>}/>
+                    <Route path="/miner" element={<MinerPage/>}/>
                 </Route>
             </Route>
         </Routes>

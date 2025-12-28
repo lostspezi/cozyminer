@@ -1,10 +1,10 @@
-import type {User} from "../types/user";
 import {Outlet, useNavigate} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
 import {FiLogOut, FiSettings} from "react-icons/fi";
 import {HiMoon, HiSun} from "react-icons/hi";
 import {FaRegCopyright} from "react-icons/fa";
 import Sidebar from "./sidebar.tsx";
+import type {User} from "../../types/user.ts";
 
 type LayoutProps = {
     user: User;

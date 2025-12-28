@@ -1,6 +1,6 @@
-import Loader from "./loader";
+import Loader from "./loader.tsx";
 
-export default function FullscreenLoader() {
+export default function FullScreenLoader() {
     return (
         <div
             className="

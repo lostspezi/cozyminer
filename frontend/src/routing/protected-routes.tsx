@@ -1,4 +1,4 @@
-import type {User} from "../types/user";
+import type {User} from "../types/user.ts";
 import {Navigate, Outlet} from "react-router-dom";
 
 type ProtectedRoutesProps = {

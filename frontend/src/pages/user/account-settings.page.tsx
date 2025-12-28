@@ -1,6 +1,6 @@
-import Title from "../components/title.tsx";
+import Title from "../../components/shared/title.tsx";
 
-export default function AccountSettings() {
+export default function AccountSettingsPage() {
     return (
         <Title headliner="Account Settings" subtext="Manage your account settings and preferences."/>
     );

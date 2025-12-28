@@ -1,8 +1,8 @@
 import {GiMineWagon, GiStoneBlock} from "react-icons/gi";
 import {HiArrowUp} from "react-icons/hi";
-import Title from "../components/title.tsx";
+import Title from "../../components/shared/title.tsx";
 
-export default function Miner() {
+export default function MinerPage() {
     return (
         <div className="space-y-6">
             {/* PAGE TITLE */}

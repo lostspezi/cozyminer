@@ -1,8 +1,8 @@
 import {FaDiscord} from "react-icons/fa";
 import {HiMoon, HiSun} from "react-icons/hi";
 import {Navigate} from "react-router-dom";
-import type {User} from "../types/user";
-import LoginBg from "../assets/img/login_bg.png";
+import type {User} from "../../types/user.ts";
+import LoginBg from "../../assets/images/login_bg.png";
 
 type LoginProps = {
     user: User | null | undefined;
@@ -10,7 +10,7 @@ type LoginProps = {
     toggleDarkMode: () => void;
 };
 
-export default function Login({
+export default function LoginPage({
                                   user,
                                   darkMode,
                                   toggleDarkMode,
