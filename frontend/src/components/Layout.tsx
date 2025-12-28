@@ -4,6 +4,7 @@ import {useEffect, useRef, useState} from "react";
 import {FiLogOut, FiSettings} from "react-icons/fi";
 import {HiMoon, HiSun} from "react-icons/hi";
 import {FaRegCopyright} from "react-icons/fa";
+import Sidebar from "./sidebar.tsx";
 
 type LayoutProps = {
     user: User;
@@ -11,9 +12,20 @@ type LayoutProps = {
     toggleDarkMode: () => void;
 };
 
+type SidebarPosition = "left" | "right";
+const SIDEBAR_KEY = "cozy-sidebar-position";
 
 export default function Layout({user, darkMode, toggleDarkMode}: Readonly<LayoutProps>) {
     const [open, setOpen] = useState(false);
+    const [sidebarPosition, setSidebarPosition] = useState<SidebarPosition>(
+        () =>
+            (localStorage.getItem(SIDEBAR_KEY) as SidebarPosition) || "left"
+    );
+
+    useEffect(() => {
+        localStorage.setItem(SIDEBAR_KEY, sidebarPosition);
+    }, [sidebarPosition]);
+
     const navigate = useNavigate();
     const menuRef = useRef<HTMLDivElement>(null);
 
@@ -131,8 +143,28 @@ export default function Layout({user, darkMode, toggleDarkMode}: Readonly<Layout
                 </nav>
             </header>
 
-            <main className="flex-1 p-6">
-                <Outlet/>
+            <main className="flex flex-1">
+                {sidebarPosition === "left" && (
+                    <Sidebar
+                        position="left"
+                        onTogglePosition={() =>
+                            setSidebarPosition((p) => (p === "left" ? "right" : "left"))
+                        }
+                    />
+                )}
+
+                <section className="flex-1 p-6">
+                    <Outlet/>
+                </section>
+
+                {sidebarPosition === "right" && (
+                    <Sidebar
+                        position="right"
+                        onTogglePosition={() =>
+                            setSidebarPosition((p) => (p === "left" ? "right" : "left"))
+                        }
+                    />
+                )}
             </main>
 
             <footer

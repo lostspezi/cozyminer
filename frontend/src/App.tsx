@@ -8,6 +8,7 @@ import Layout from "./components/Layout";
 import type {User} from "./types/user";
 import AccountSettings from "./pages/account-settings.tsx";
 import NotFound from "./pages/not-found.tsx";
+import FullscreenLoader from "./components/FullScreenLoader.tsx";
 
 const THEME_KEY = "cozy-theme";
 
@@ -24,7 +25,6 @@ export default function App() {
     useEffect(() => {
         const root = document.documentElement;
 
-        // wichtig: toggle mit second arg, dann ist es garantiert korrekt
         root.classList.toggle("dark", darkMode);
 
         localStorage.setItem(THEME_KEY, darkMode ? "dark" : "light");
@@ -38,7 +38,7 @@ export default function App() {
             .finally(() => setLoading(false));
     }, []);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <FullscreenLoader/>;
 
     return (
         <Routes>

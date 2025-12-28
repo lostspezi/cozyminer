@@ -9,6 +9,22 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@keyframes miner-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.animate-miner-spin {
+    animation: miner-spin 1.4s ease-in-out infinite;
+}
+
 html, body {
     font-family: 'PixelifySans', system-ui, sans-serif;
     image-rendering: pixelated;
