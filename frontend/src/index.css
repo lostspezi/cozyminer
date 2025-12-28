@@ -7,6 +7,8 @@
     font-display: swap;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 html, body {
     font-family: 'PixelifySans', system-ui, sans-serif;
     image-rendering: pixelated;

@@ -1,14 +1,20 @@
 import {FaDiscord} from "react-icons/fa";
-import type {User} from "../types/user.ts";
+import {HiMoon, HiSun} from "react-icons/hi";
 import {Navigate} from "react-router-dom";
+import type {User} from "../types/user";
+import LoginBg from "../assets/img/login_bg.png";
 
 type LoginProps = {
     user: User | null | undefined;
+    darkMode: boolean;
+    toggleDarkMode: () => void;
 };
 
-const YOUTUBE_ID = "Rik8YhvH09M";
-
-export default function Login({user}: Readonly<LoginProps>) {
+export default function Login({
+                                  user,
+                                  darkMode,
+                                  toggleDarkMode,
+                              }: Readonly<LoginProps>) {
     if (user) {
         return <Navigate to="/"/>;
     }
@@ -19,80 +25,97 @@ export default function Login({user}: Readonly<LoginProps>) {
     };
 
     return (
-        <div className="relative h-screen w-screen overflow-hidden">
+        <div
+            className="relative h-screen w-screen overflow-hidden bg-stone-50 dark:bg-slate-900 text-stone-800 dark:text-slate-100">
 
-            {/* YouTube Background */}
-            <iframe
-                className="absolute top-1/2 left-1/2
-             w-screen h-screen
-             min-w-[177.78vh] min-h-[56.25vw]
-             -translate-x-1/2 -translate-y-1/2
-             pointer-events-none"
-                src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_ID}&controls=0&showinfo=0&modestbranding=1&playsinline=1`}
-                allow="autoplay; fullscreen"
-                allowFullScreen
-                title="Login Background"
+            {/* IMAGE BACKGROUND */}
+            <img
+                src={LoginBg}
+                alt="Cozy mining background"
+                className="
+          absolute inset-0
+          h-full w-full
+          object-cover
+          scale-105
+          blur-sm
+          opacity-80 dark:opacity-60
+        "
             />
 
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/50 z-10"/>
+            {/* SOFT COLOR OVERLAY */}
+            <div className="
+        absolute inset-0 z-10
+        bg-stone-100/70 dark:bg-slate-900/70
+      "/>
 
-            {/* Login Content */}
-            <div className="relative z-20 h-full w-full flex justify-center items-center">
-                <div className="h-auto w-3/4 rounded-2xl border-4 border-gray-400/30
-                        bg-gray-800/80 backdrop-blur-md
-                        flex flex-col justify-between p-6 space-y-4 text-white">
-                    <h1 className="text-5xl text-center underline">Cozy Miner</h1>
+            {/* DARK MODE TOGGLE */}
+            <button
+                onClick={toggleDarkMode}
+                className="
+          absolute top-6 right-6 z-30
+          rounded-full p-2
+          bg-white/80 dark:bg-slate-800/80
+          hover:bg-white dark:hover:bg-slate-700
+          transition-colors cursor-pointer
+        "
+                aria-label="Toggle dark mode"
+            >
+                {darkMode ? <HiSun size={20}/> : <HiMoon size={20}/>}
+            </button>
 
-                    <div className="flex flex-col space-y-2">
+            {/* LOGIN CARD */}
+            <div className="relative z-20 flex h-full items-center justify-center px-6">
+                <div
+                    className="
+            w-full max-w-2xl
+            rounded-2xl
+            bg-white/80 dark:bg-slate-800/80
+            backdrop-blur-md
+            shadow-xl
+            border border-stone-200 dark:border-slate-700
+            p-8 space-y-6
+          "
+                >
+                    <h1 className="text-center text-4xl font-semibold tracking-wide">
+                        Cozy Miner
+                    </h1>
+
+                    <p className="text-center text-sm text-stone-600 dark:text-slate-400">
+                        A calm idle mining experience focused on comfort, progression,
+                        and steady growth.
+                    </p>
+
+                    <div className="space-y-3 text-sm leading-relaxed text-stone-700 dark:text-slate-300">
                         <p>
-                            Cozy Miner combines idle gameplay with meaningful progression in a calm and welcoming
-                            atmosphere.
-                            Start small, gather resources, and continuously improve your mining setup over time.
+                            Start small, gather resources, and slowly improve your mining
+                            setup over time.
                         </p>
                         <p>
-                            Automate production, unlock upgrades, and make smart decisions to increase efficiency and
-                            long term growth.
-                            Whether you actively manage your setup or let it run in the background, progress is always
-                            moving forward.
+                            Unlock upgrades, automate production, and watch your mine grow
+                            even when you are away.
                         </p>
                         <p>
-                            Designed for relaxed play sessions, Cozy Miner focuses on comfort, clarity, and steady
-                            advancement rather than pressure or competition.
-                            Log in with Discord and build your mining world at your own pace.
+                            Designed for relaxed play sessions without pressure or competition.
                         </p>
                     </div>
 
                     <button
                         onClick={login}
                         className="
-        relative overflow-hidden
-        bg-gray-900
-        rounded-xl p-3
-        flex justify-center items-center
-        cursor-pointer
-        group
-    "
+              mt-4 w-full
+              rounded-xl
+              bg-emerald-500 hover:bg-emerald-600
+              text-white
+              py-3
+              flex items-center justify-center gap-3
+              transition-colors
+              focus:outline-none focus:ring-2 focus:ring-emerald-400
+              cursor-pointer
+            "
                     >
-                        {/* Hover Fill */}
-                        <span
-                            className="
-            absolute inset-0
-            bg-gray-700
-            transform scale-x-0
-            origin-left
-            transition-transform duration-800 ease-out
-            group-hover:scale-x-100
-        "
-                        />
-
-                        {/* Content */}
-                        <span className="relative z-10 flex items-center">
-        <FaDiscord size={28} className="mr-3"/>
-        Login with Discord
-    </span>
+                        <FaDiscord size={22}/>
+                        Login with Discord
                     </button>
-
                 </div>
             </div>
         </div>
