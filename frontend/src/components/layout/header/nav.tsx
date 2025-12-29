@@ -51,11 +51,8 @@ export default function Nav({
             <PlayerProgress user={user}/>
 
             {/* RIGHT */}
-            <div ref={menuRef} className="flex items-center justify-end gap-3">
-                <span className="text-sm text-stone-600 dark:text-slate-300">
-                  {user.username}
-                </span>
-
+            <div ref={menuRef} className="flex items-center justify-end gap-2">
+                <LanguageSwitch/>
                 <button
                     onClick={() => setOpen(!open)}
                     className="rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-400 cursor-pointer"
@@ -66,8 +63,6 @@ export default function Nav({
                         alt={user.username}
                     />
                 </button>
-
-                <LanguageSwitch/>
 
                 {/* DROPDOWN */}
                 <div
