@@ -1,7 +1,7 @@
 import {Outlet, useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {FaRegCopyright} from "react-icons/fa";
-import Sidebar from "./sidebar.tsx";
+import Sidebar from "./navigation/sidebar/sidebar.tsx";
 import type {User} from "../../types/user.ts";
 import Header from "./header/header.tsx";
 
