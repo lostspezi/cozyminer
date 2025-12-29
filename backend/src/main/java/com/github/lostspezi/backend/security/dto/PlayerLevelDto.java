@@ -1,7 +1,7 @@
 package com.github.lostspezi.backend.security.dto;
 
 public record PlayerLevelDto(
-        int level,
+        int current,
         long currentXp,
         long xpForNextLevel,
         long missingXp,

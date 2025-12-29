@@ -6,7 +6,7 @@ public final class PlayerLevelCalculator {
     }
 
     /**
-     * XP needed to advance FROM this level TO the next one
+     * XP needed to advance FROM this current TO the next one
      */
     public static long xpForNextLevel(int level) {
         return 100L * level * level;
