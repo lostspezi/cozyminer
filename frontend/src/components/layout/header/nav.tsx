@@ -1,7 +1,7 @@
 import {useEffect, useRef, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import type {User} from "../../../types/user.ts";
-import AccountMenu from "../navigation/menu/account-menu.tsx";
+import AccountMenu from "../navigation/account/account-menu.tsx";
 
 type NavProps = {
     user: User;

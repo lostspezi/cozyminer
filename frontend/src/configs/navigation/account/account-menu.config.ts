@@ -1,4 +1,4 @@
-import type {MenuItem} from "./menu-item.type";
+import type {MenuItem} from "./account-menu-item.type.ts";
 import {FiLogOut, FiSettings} from "react-icons/fi";
 import {HiMoon, HiSun} from "react-icons/hi";
 

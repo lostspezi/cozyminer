@@ -1,4 +1,4 @@
-import {getAccountMenuItems} from "../../../../configs/navigation/account-menu.config.ts";
+import {getAccountMenuItems} from "../../../../configs/navigation/account/account-menu.config.ts";
 import Menu from "./menu.tsx";
 
 type AccountMenuProps = {

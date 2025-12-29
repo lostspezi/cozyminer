@@ -1,4 +1,4 @@
-import type {MenuItem} from "../../../../configs/navigation/menu-item.type.ts";
+import type {MenuItem} from "../../../../configs/navigation/account/account-menu-item.type.ts";
 
 type MenuProps = {
     items: MenuItem[];
