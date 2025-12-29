@@ -2,6 +2,7 @@ package com.github.lostspezi.backend.security.service;
 
 import com.github.lostspezi.backend.user.AppUser;
 import com.github.lostspezi.backend.user.AppUserRepository;
+import com.github.lostspezi.backend.user.PlayerLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -29,6 +30,11 @@ public class DiscordOAuth2UserService extends DefaultOAuth2UserService {
 
         String avatarUrl = String.format("https://cdn.discordapp.com/avatars/%s/%s.png?size=256", discordId, avatarHash);
 
+        PlayerLevel level = new PlayerLevel(
+                1,
+                0L
+        );
+
         return userRepository.findByDiscordId(discordId)
                 .orElseGet(() ->
                         userRepository.save(
@@ -37,6 +43,7 @@ public class DiscordOAuth2UserService extends DefaultOAuth2UserService {
                                         .avatarUrl(avatarUrl)
                                         .email(email)
                                         .username(username)
+                                        .level(level)
                                         .build()
                         )
                 );
