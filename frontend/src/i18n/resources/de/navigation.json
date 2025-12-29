@@ -17,5 +17,8 @@
     "contact": "Kontakt",
     "imprint": "Impressum",
     "privacyPolicy": "Datenschutz-Bestimmungen"
+  },
+  "playerProgress": {
+    "missingXp": "{{xp}} EP bis zum nächsten Level"
   }
 }

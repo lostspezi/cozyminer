@@ -17,5 +17,8 @@
     "contact": "Contact",
     "imprint": "Imprint",
     "privacyPolicy": "Privacy Policy"
+  },
+  "playerProgress": {
+    "missingXp": "{{xp}} XP to next level"
   }
 }

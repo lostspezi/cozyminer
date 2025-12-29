@@ -48,7 +48,7 @@ export default function Nav({
             </div>
 
             {/* CENTER */}
-            <PlayerProgress/>
+            <PlayerProgress user={user}/>
 
             {/* RIGHT */}
             <div ref={menuRef} className="flex items-center justify-end gap-3">
