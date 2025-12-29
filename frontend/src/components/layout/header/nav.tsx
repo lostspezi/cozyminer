@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import type {User} from "../../../types/user.ts";
 import AccountMenu from "../navigation/account/account-menu.tsx";
 import LanguageSwitch from "./language-switch.tsx";
+import PlayerProgress from "./player-progress.tsx";
 
 type NavProps = {
     user: User;
@@ -40,29 +41,20 @@ export default function Nav({
     }, []);
 
     return (
-        <nav className="grid grid-cols-3 items-center">
+        <nav className="flex flex-row justify-between items-center">
             {/* LEFT */}
             <div className="font-semibold tracking-wide">
                 Cozy Miner
             </div>
 
             {/* CENTER */}
-            <div className="flex flex-col items-center">
-        <span className="text-xs uppercase tracking-wide text-stone-500 dark:text-slate-400">
-          Level 42
-        </span>
-
-                <div className="mt-1 h-2 w-40 rounded-full bg-stone-300 dark:bg-slate-600 overflow-hidden">
-                    <div
-                        className="h-full w-[52%] rounded-full bg-emerald-500 dark:bg-emerald-400 transition-all"/>
-                </div>
-            </div>
+            <PlayerProgress/>
 
             {/* RIGHT */}
-            <div ref={menuRef} className="relative ml-auto flex items-center gap-3">
-        <span className="text-sm text-stone-600 dark:text-slate-300">
-          {user.username}
-        </span>
+            <div ref={menuRef} className="flex items-center justify-end gap-3">
+                <span className="text-sm text-stone-600 dark:text-slate-300">
+                  {user.username}
+                </span>
 
                 <button
                     onClick={() => setOpen(!open)}

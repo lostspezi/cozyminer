@@ -39,7 +39,7 @@ export default function LanguageSwitch() {
 
     return (
         <>
-            <div ref={ref} className="relative">
+            <div ref={ref}>
                 {/* BUTTON */}
                 <button
                     onClick={() => setOpen((o) => !o)}
