@@ -1,5 +1,5 @@
 export type FooterItem = {
     id: string;
-    label: string;
+    labelKey: string;
     to: string;
 };

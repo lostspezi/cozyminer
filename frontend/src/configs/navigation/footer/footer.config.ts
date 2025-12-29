@@ -3,17 +3,17 @@ import type {FooterItem} from "./footer-item.type";
 export const FOOTER_ITEMS: FooterItem[] = [
     {
         id: "contact",
-        label: "Contact",
+        labelKey: "footer.contact",
         to: "/contact",
     },
     {
         id: "imprint",
-        label: "Imprint",
+        labelKey: "footer.imprint",
         to: "/imprint",
     },
     {
         id: "privacy",
-        label: "Privacy Policy",
+        labelKey: "footer.privacyPolicy",
         to: "/privacy-policy",
     },
 ];

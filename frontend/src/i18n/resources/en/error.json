@@ -1,0 +1,8 @@
+{
+  "NotFound": {
+    "error": "Error 404 · Cozy Miner",
+    "btnText": "Return to Camp",
+    "text": "This tunnel doesn’t lead anywhere. The miner couldn’t find what you were looking for, but there’s plenty of warmth and light back home.",
+    "title": "Oops… you seem to be lost"
+  }
+}

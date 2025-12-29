@@ -4,23 +4,23 @@ import {GiAnvil, GiCampfire, GiMiner} from "react-icons/gi";
 export const getSidebarItems = (): SidebarItem[] => [
     {
         id: "dashboard",
-        label: "Dashboard",
+        labelKey: "sidebar.dashboard",
         to: "/",
         icon: GiCampfire,
     },
     {
         id: "miner",
-        label: "Miner",
+        labelKey: "sidebar.miner",
         to: "/miner",
         icon: GiMiner,
     },
     {
         id: "smelter",
-        label: "Smelter",
+        labelKey: "sidebar.smelter",
         to: "/smelter",
         icon: GiAnvil,
         locked: true,
         disabled: true,
-        title: "Unlocks later",
+        titleKey: "sidebar.locked",
     },
 ];

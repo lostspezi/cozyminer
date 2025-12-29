@@ -1,4 +1,5 @@
 import type {FooterItem} from "../../../configs/navigation/footer/footer-item.type.ts";
+import {useTranslation} from "react-i18next";
 
 type Props = {
     item: FooterItem;
@@ -9,6 +10,8 @@ export default function FooterNavItem({
                                           item,
                                           onNavigate,
                                       }: Readonly<Props>) {
+    const {t} = useTranslation("navigation");
+
     return (
         <button
             onClick={() => onNavigate(item.to)}
@@ -17,7 +20,7 @@ export default function FooterNavItem({
         transition-colors cursor-pointer
       "
         >
-            {item.label}
+            {t(item.labelKey)}
         </button>
     );
 }

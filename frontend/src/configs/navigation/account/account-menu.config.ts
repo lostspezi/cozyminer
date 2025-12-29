@@ -17,19 +17,19 @@ export const getAccountMenuItems = ({
                                     }: AccountMenuConfigProps): MenuItem[] => [
     {
         id: "account-settings",
-        label: "Account Settings",
+        labelKey: "account.settings",
         icon: FiSettings,
         onClick: onAccountSettings,
     },
     {
         id: "theme-toggle",
-        label: darkMode ? "Light Mode" : "Dark Mode",
+        labelKey: darkMode ? "account.lightMode" : "account.darkMode",
         icon: darkMode ? HiSun : HiMoon,
         onClick: onToggleDarkMode,
     },
     {
         id: "logout",
-        label: "Logout",
+        labelKey: "account.logout",
         icon: FiLogOut,
         onClick: onLogout,
         danger: true,

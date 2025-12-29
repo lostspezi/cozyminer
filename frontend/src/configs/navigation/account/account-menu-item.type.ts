@@ -2,7 +2,7 @@ import type {IconType} from "react-icons";
 
 export type MenuItem = {
     id: string;
-    label: string;
+    labelKey: string;
     icon?: IconType;
     onClick?: () => void;
     danger?: boolean;

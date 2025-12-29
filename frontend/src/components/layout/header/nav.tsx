@@ -2,6 +2,7 @@ import {useEffect, useRef, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import type {User} from "../../../types/user.ts";
 import AccountMenu from "../navigation/account/account-menu.tsx";
+import LanguageSwitch from "./language-switch.tsx";
 
 type NavProps = {
     user: User;
@@ -73,6 +74,8 @@ export default function Nav({
                         alt={user.username}
                     />
                 </button>
+
+                <LanguageSwitch/>
 
                 {/* DROPDOWN */}
                 <div

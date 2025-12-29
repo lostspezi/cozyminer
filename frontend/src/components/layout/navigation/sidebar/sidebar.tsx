@@ -2,6 +2,7 @@ import {useState} from "react";
 import {HiChevronDoubleLeft, HiSwitchHorizontal} from "react-icons/hi";
 import SidebarNavItem from "./sidebar-nav-item";
 import {getSidebarItems} from "../../../../configs/navigation/sidebar/sidebar.config.ts";
+import {useTranslation} from "react-i18next";
 
 type SidebarProps = {
     position: "left" | "right";
@@ -15,6 +16,7 @@ export default function Sidebar({
     const [collapsed, setCollapsed] = useState(false);
     const isRight = position === "right";
     const items = getSidebarItems();
+    const {t} = useTranslation("navigation");
 
     const shouldRotateCollapseIcon = (): boolean =>
         (!isRight && collapsed) || (isRight && !collapsed);
@@ -60,7 +62,7 @@ export default function Sidebar({
                             shouldRotateCollapseIcon() ? "rotate-180" : ""
                         }`}
                     />
-                    {!collapsed && <span className="text-xs">Collapse</span>}
+                    {!collapsed && <span className="text-xs">{t('sidebar.collapse')}</span>}
                 </button>
 
                 {/* POSITION */}
@@ -71,7 +73,7 @@ export default function Sidebar({
                     <HiSwitchHorizontal/>
                     {!collapsed && (
                         <span className="hidden sm:inline text-xs ml-2">
-                            Switch side
+                            {t('sidebar.switchSide')}
                         </span>
                     )}
                 </button>

@@ -3,10 +3,12 @@ import {useNavigate} from "react-router-dom";
 import {FaRegCopyright} from "react-icons/fa";
 import {FOOTER_ITEMS} from "../../../configs/navigation/footer/footer.config.ts";
 import FooterNavItem from "./footer-nav-item.tsx";
+import {useTranslation} from "react-i18next";
 
 export default function Footer() {
     const navigate = useNavigate();
     const year = new Date().getFullYear();
+    const {t} = useTranslation("common");
 
     return (
         <footer className="border-t border-stone-200 dark:border-slate-700 bg-stone-100 dark:bg-slate-800 px-6 py-4">
@@ -26,7 +28,7 @@ export default function Footer() {
                 {/* COPYRIGHT */}
                 <div className="flex items-center gap-2">
                     <FaRegCopyright/>
-                    {year} Cozy Miner. All rights reserved.
+                    {year} Cozy Miner. {t('footerText')}
                 </div>
             </div>
         </footer>

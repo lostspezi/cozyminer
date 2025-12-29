@@ -1,6 +1,7 @@
 import {NavLink} from "react-router-dom";
 import {HiLockClosed} from "react-icons/hi";
 import type {SidebarItem} from "../../../../configs/navigation/sidebar/sidebar-item.type.ts";
+import {useTranslation} from "react-i18next";
 
 type Props = {
     item: SidebarItem;
@@ -13,6 +14,7 @@ export default function SidebarNavItem({
                                            isRight,
                                            collapsed,
                                        }: Readonly<Props>) {
+    const {t} = useTranslation("navigation");
     const Icon = item.icon;
 
     const getClasses = (isActive: boolean) => {
@@ -30,7 +32,7 @@ export default function SidebarNavItem({
     return (
         <NavLink
             to={item.disabled ? "#" : item.to}
-            title={item.title}
+            title={t(item.titleKey ?? '')}
             aria-disabled={item.disabled}
             onClick={(e) => item.disabled && e.preventDefault()}
             className={({isActive}) =>
@@ -45,7 +47,7 @@ export default function SidebarNavItem({
 
             {!collapsed && (
                 <span className="hidden sm:flex items-center gap-2">
-                    {item.label}
+                    {t(item.labelKey)}
                     {item.locked && <HiLockClosed className="text-xs opacity-70"/>}
                 </span>
             )}

@@ -1,8 +1,10 @@
 import {useNavigate} from "react-router-dom";
 import NotFoundImg from "../../assets/images/404.png";
+import {useTranslation} from "react-i18next";
 
 export default function NotFoundPage() {
     const navigate = useNavigate();
+    const {t} = useTranslation("error");
 
     return (
         <div
@@ -17,14 +19,12 @@ export default function NotFoundPage() {
 
             {/* TITLE */}
             <h1 className="mb-2 text-3xl font-semibold tracking-wide">
-                Oops… you seem to be lost
+                {t('NotFound.title')}
             </h1>
 
             {/* SUBTEXT */}
             <p className="mb-6 max-w-md text-sm text-stone-600 dark:text-slate-400">
-                This tunnel doesn’t lead anywhere.
-                The miner couldn’t find what you were looking for,
-                but there’s plenty of warmth and light back home.
+                {t('NotFound.text')}
             </p>
 
             {/* ACTION */}
@@ -37,12 +37,12 @@ export default function NotFoundPage() {
           transition-colors cursor-pointer
         "
             >
-                Return to Camp
+                {t('NotFound.btnText')}
             </button>
 
             {/* FOOTER NOTE */}
             <span className="mt-6 text-xs text-stone-400 dark:text-slate-500">
-        Error 404 · Cozy Miner
+        {t('NotFound.error')}
       </span>
         </div>
     );

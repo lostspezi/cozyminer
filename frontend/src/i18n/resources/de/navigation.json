@@ -1,0 +1,21 @@
+{
+  "sidebar": {
+    "dashboard": "Übersicht",
+    "miner": "Minen",
+    "smelter": "Schmelzen",
+    "locked": "Wird später freigeschaltet",
+    "collapse": "Einklappen",
+    "switchSide": "Seite wechseln"
+  },
+  "account": {
+    "settings": "Einstellungen",
+    "lightMode": "Heller Modus",
+    "darkMode": "Dunkler Modus",
+    "logout": "Abmelden"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "imprint": "Impressum",
+    "privacyPolicy": "Datenschutz-Bestimmungen"
+  }
+}

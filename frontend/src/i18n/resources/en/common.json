@@ -1,0 +1,9 @@
+{
+  "language": {
+    "confirmTitle": "Change language",
+    "confirmMessage": "Do you really want to change the language?"
+  },
+  "confirm": "Confirm",
+  "cancel": "Cancel",
+  "footerText": "All rights reserved."
+}

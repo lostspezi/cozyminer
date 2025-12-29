@@ -1,0 +1,21 @@
+{
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "miner": "Miner",
+    "smelter": "Smelter",
+    "locked": "Unlocks later",
+    "collapse": "Collapse",
+    "switchSide": "Switch side"
+  },
+  "account": {
+    "settings": "Settings",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "logout": "Logout"
+  },
+  "footer": {
+    "contact": "Contact",
+    "imprint": "Imprint",
+    "privacyPolicy": "Privacy Policy"
+  }
+}

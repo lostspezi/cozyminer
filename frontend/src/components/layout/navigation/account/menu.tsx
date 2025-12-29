@@ -1,10 +1,13 @@
 import type {MenuItem} from "../../../../configs/navigation/account/account-menu-item.type.ts";
+import {useTranslation} from "react-i18next";
 
 type MenuProps = {
     items: MenuItem[];
 };
 
 export default function Menu({items}: Readonly<MenuProps>) {
+    const {t} = useTranslation("navigation");
+
     return (
         <ul className="py-1">
             {items.map((item) => {
@@ -25,7 +28,7 @@ export default function Menu({items}: Readonly<MenuProps>) {
               `}
                         >
                             {Icon && <Icon className="h-4 w-4"/>}
-                            {item.label}
+                            {t(item.labelKey)}
                         </button>
                     </li>
                 );

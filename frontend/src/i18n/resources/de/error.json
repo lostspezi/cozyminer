@@ -1,0 +1,8 @@
+{
+  "NotFound": {
+    "error": "Fehler 404 · Cozy Miner",
+    "btnText": "Zurück ins Lager",
+    "text": "Dieser Tunnel führt nirgendwohin. Der Bergmann konnte nicht finden, wonach du gesucht hast – aber im Lager warten Wärme und Licht auf dich.",
+    "title": "Hoppla… du hast dich verirrt"
+  }
+}
