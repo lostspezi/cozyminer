@@ -11,6 +11,11 @@ import NotFoundPage from "./pages/error/not-found.page.tsx";
 import FullScreenLoader from "./components/loading/full-screen-loader.tsx";
 import MinerPage from "./pages/miner/miner.page.tsx";
 import DashboardPage from "./pages/home/dashboard.page.tsx";
+import NewsPage from "./pages/news/news.page.tsx";
+import ContactPage from "./pages/contact/contact.page.tsx";
+import ImprintPage from "./pages/imprint/imprint.page.tsx";
+import PrivacyPolicyPage from "./pages/privacypolicy/privacy-policy.page.tsx";
+import InventoryPage from "./pages/inventory/inventory.page.tsx";
 
 const THEME_KEY = "cozy-theme";
 
@@ -61,6 +66,11 @@ export default function App() {
                     <Route path="/" element={<DashboardPage user={user!}/>}/>
                     <Route path="/account-settings" element={<AccountSettingsPage/>}/>
                     <Route path="/miner" element={<MinerPage/>}/>
+                    <Route path="/news" element={<NewsPage/>}/>
+                    <Route path="/contact" element={<ContactPage/>}/>
+                    <Route path="/imprint" element={<ImprintPage/>}/>
+                    <Route path="/privacy-policy" element={<PrivacyPolicyPage/>}/>
+                    <Route path="/inventory" element={<InventoryPage/>}/>
                 </Route>
             </Route>
         </Routes>

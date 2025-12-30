@@ -17,7 +17,8 @@
   "footer": {
     "contact": "Kontakt",
     "imprint": "Impressum",
-    "privacyPolicy": "Datenschutz-Bestimmungen"
+    "privacyPolicy": "Datenschutz-Bestimmungen",
+    "news": "Neuigkeiten"
   },
   "playerProgress": {
     "missingXp": "{{xp}} EP bis zum nächsten Level"
