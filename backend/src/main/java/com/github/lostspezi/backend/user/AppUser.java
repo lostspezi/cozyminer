@@ -4,6 +4,7 @@ import lombok.*;
 import net.minidev.json.annotate.JsonIgnore;
 import org.jspecify.annotations.NonNull;
 import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
@@ -25,12 +26,14 @@ public class AppUser implements OAuth2User {
     private String id;
 
     @Getter
+    @Indexed(unique = true)
     private String discordId;
 
     @Getter
     private String username;
 
     @Getter
+    @Indexed(unique = true)
     private String email;
 
     @Getter
