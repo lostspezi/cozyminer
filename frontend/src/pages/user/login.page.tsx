@@ -1,8 +1,8 @@
 import {FaDiscord} from "react-icons/fa";
-import {HiMoon, HiSun} from "react-icons/hi";
 import {Navigate} from "react-router-dom";
 import type {User} from "../../types/user.ts";
 import LoginBg from "../../assets/images/login_bg.png";
+import DarkModeToggle from "../../components/shared/dark-mode-toggle.tsx";
 
 type LoginProps = {
     user: User | null | undefined;
@@ -49,19 +49,7 @@ export default function LoginPage({
       "/>
 
             {/* DARK MODE TOGGLE */}
-            <button
-                onClick={toggleDarkMode}
-                className="
-          absolute top-6 right-6 z-30
-          rounded-full p-2
-          bg-white/80 dark:bg-slate-800/80
-          hover:bg-white dark:hover:bg-slate-700
-          transition-colors cursor-pointer
-        "
-                aria-label="Toggle dark mode"
-            >
-                {darkMode ? <HiSun size={20}/> : <HiMoon size={20}/>}
-            </button>
+            <DarkModeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} position="absolute"/>
 
             {/* LOGIN CARD */}
             <div className="relative z-20 flex h-full items-center justify-center px-6">
