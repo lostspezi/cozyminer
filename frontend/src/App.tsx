@@ -64,7 +64,8 @@ export default function App() {
                     }
                 >
                     <Route path="/" element={<DashboardPage user={user!}/>}/>
-                    <Route path="/account-settings" element={<AccountSettingsPage/>}/>
+                    <Route path="/account-settings"
+                           element={<AccountSettingsPage user={user!} setOnUpdate={setUser}/>}/>
                     <Route path="/miner" element={<MinerPage/>}/>
                     <Route path="/news" element={<NewsPage/>}/>
                     <Route path="/contact" element={<ContactPage/>}/>

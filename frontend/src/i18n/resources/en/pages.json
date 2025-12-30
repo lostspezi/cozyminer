@@ -5,6 +5,21 @@
     "dangerZone": "Danger Zone",
     "dangerZoneDesc": "Actions in this section are permanent and cannot be undone. Deleting your account will remove all your progress, mines, and items forever. Please make sure you are absolutely certain before continuing.",
     "deleteAccount": "Delete Account",
-    "deleteAccountConfirm": "Are you sure you want to delete your account?"
+    "deleteAccountConfirm": "Are you sure you want to delete your account?",
+    "success": "Account successfully updated",
+    "error": "Failed to update account",
+    "update": "Update",
+    "invalidUsername": "Invalid username",
+    "invalidEmail": "Invalid email",
+    "invalidUsernameEmail": "Invalid username and email",
+    "noChanges": "No changes",
+    "loading": "Updating account...",
+    "account": "Account",
+    "username": "Username",
+    "usernameError": "Username must be between 3 and 32 characters long and only contain letters, numbers, dashes and underscores.",
+    "email": "Email",
+    "emailError": "Email must be between 3 and 64 characters long and valid.",
+    "updateAccount": "Update account",
+    "updateAccountConfirm": "Are you sure you want to update your account information?"
   }
 }

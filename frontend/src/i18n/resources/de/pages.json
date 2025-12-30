@@ -3,8 +3,23 @@
     "title": "Kontoeinstellungen",
     "subtext": "Verwalte deine Kontoeinstellungen und Präferenzen.",
     "dangerZone": "Gefahrenbereich",
-    "dangerZoneDesc": "Aktionen in diesem Bereich sind dauerhaft und können nicht rückgängig gemacht werden. Das Löschen deines Kontos entfernt deinen gesamten Fortschritt, alle Minen und Gegenstände unwiderruflich. Bitte stelle sicher, dass du dir absolut sicher bist, bevor du fortfährst.",
+    "dangerZoneDesc": "Aktionen in diesem Bereich sind dauerhaft und können nicht rückgängig gemacht werden. Das Löschen deines Kontos entfernt deinen gesamten Fortschritt, alle Minen und Gegenstände unwiderruflich. Bitte sei dir absolut sicher, bevor du fortfährst.",
     "deleteAccount": "Konto löschen",
-    "deleteAccountConfirm": "Bist du sicher, dass du dein Konto löschen möchtest?"
+    "deleteAccountConfirm": "Möchtest du dein Konto wirklich löschen?",
+    "success": "Konto erfolgreich aktualisiert",
+    "error": "Konto konnte nicht aktualisiert werden",
+    "update": "Aktualisieren",
+    "invalidUsername": "Ungültiger Benutzername",
+    "invalidEmail": "Ungültige E-Mail-Adresse",
+    "invalidUsernameEmail": "Ungültiger Benutzername und ungültige E-Mail-Adresse",
+    "noChanges": "Keine Änderungen",
+    "loading": "Konto wird aktualisiert…",
+    "account": "Konto",
+    "username": "Benutzername",
+    "usernameError": "Der Benutzername muss zwischen 3 und 32 Zeichen lang sein und darf nur Buchstaben, Zahlen, Bindestriche und Unterstriche enthalten.",
+    "email": "E-Mail-Adresse",
+    "emailError": "Die E-Mail-Adresse muss zwischen 3 und 64 Zeichen lang und gültig sein.",
+    "updateAccount": "Konto aktualisieren",
+    "updateAccountConfirm": "Möchtest du deine Kontoinformationen wirklich aktualisieren?"
   }
 }

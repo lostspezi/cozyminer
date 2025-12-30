@@ -16,9 +16,10 @@ export const RANDOM_COZY_MESSAGE =
 
 type LoaderProps = {
     size?: number;
+    message?: string;
 };
 
-export default function Loader({size = 48}: Readonly<LoaderProps>) {
+export default function Loader({size = 48, message}: Readonly<LoaderProps>) {
     return (
         <div className="flex flex-col items-center justify-center gap-4 text-stone-600 dark:text-slate-300">
             <div
@@ -33,7 +34,7 @@ export default function Loader({size = 48}: Readonly<LoaderProps>) {
             </div>
 
             <span className="text-sm tracking-wide text-center">
-        {RANDOM_COZY_MESSAGE}
+        {message || RANDOM_COZY_MESSAGE}
       </span>
         </div>
     );

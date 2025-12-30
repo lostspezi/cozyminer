@@ -13,6 +13,7 @@ public final class MeResponseMapper {
                 user.getId(),
                 user.getUsername(),
                 user.getAvatarUrl(),
+                user.getEmail(),
                 PlayerLevelMapper.toDto(user.getLevel())
         );
     }

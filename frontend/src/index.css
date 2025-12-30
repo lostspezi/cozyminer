@@ -25,6 +25,57 @@
     animation: miner-spin 1.4s ease-in-out infinite;
 }
 
+/* ENTRY */
+@keyframes snackbar-in {
+    from {
+        opacity: 0;
+        transform: translateX(24px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.animate-snackbar-in {
+    animation: snackbar-in 220ms ease-out both;
+}
+
+/* EXIT: links → rechts → weg */
+@keyframes snackbar-out {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(120%);
+    }
+}
+
+.animate-snackbar-out {
+    animation: snackbar-out 420ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* TIMER */
+@keyframes snackbar-timer {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0);
+    }
+}
+
+.animate-snackbar-timer {
+    animation-name: snackbar-timer;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
 html, body {
     font-family: 'PixelifySans', system-ui, sans-serif;
     image-rendering: pixelated;
