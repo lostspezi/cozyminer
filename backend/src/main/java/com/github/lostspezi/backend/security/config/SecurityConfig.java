@@ -24,18 +24,35 @@ public class SecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) {
         http
                 .csrf(AbstractHttpConfigurer::disable)
+
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/actuator/prometheus").permitAll()
-                        .requestMatchers("/actuator/health").permitAll()
+                        .requestMatchers("/actuator/**").permitAll()
+                        .requestMatchers("/oauth2/**").permitAll()
+                        .requestMatchers("/login/**").permitAll()
                         .anyRequest().authenticated()
                 )
+
+                .exceptionHandling(ex -> ex
+                        .defaultAuthenticationEntryPointFor(
+                                (_, response, _) -> {
+                                    response.setStatus(401);
+                                    response.setContentType("application/json");
+                                    response.getWriter().write("{\"error\": \"Login required\"}");
+                                },
+                                request -> request.getRequestURI().startsWith("/api/")
+                        )
+                )
+
                 .oauth2Login(oauth -> oauth
                         .userInfoEndpoint(userInfo ->
                                 userInfo.userService(discordOAuth2UserService)
                         )
                         .defaultSuccessUrl(frontendUrl, true)
                 )
-                .logout(logout -> logout.logoutSuccessUrl(frontendUrl + "/login"));
+
+                .logout(logout ->
+                        logout.logoutSuccessUrl(frontendUrl + "/login")
+                );
 
         return http.build();
     }
