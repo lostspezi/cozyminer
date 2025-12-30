@@ -5,7 +5,8 @@
     "smelter": "Schmelzen",
     "locked": "Wird später freigeschaltet",
     "collapse": "Einklappen",
-    "switchSide": "Seite wechseln"
+    "switchSide": "Seite wechseln",
+    "inventory": "Inventar"
   },
   "account": {
     "settings": "Einstellungen",

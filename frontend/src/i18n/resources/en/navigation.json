@@ -5,7 +5,8 @@
     "smelter": "Smelter",
     "locked": "Unlocks later",
     "collapse": "Collapse",
-    "switchSide": "Switch side"
+    "switchSide": "Switch side",
+    "inventory": "Inventory"
   },
   "account": {
     "settings": "Settings",

@@ -1,5 +1,5 @@
 import type {SidebarItem} from "./sidebar-item.type";
-import {GiAnvil, GiCampfire, GiMiner} from "react-icons/gi";
+import {GiAnvil, GiCampfire, GiMiner, GiOpenTreasureChest} from "react-icons/gi";
 
 export const getSidebarItems = (): SidebarItem[] => [
     {
@@ -7,6 +7,12 @@ export const getSidebarItems = (): SidebarItem[] => [
         labelKey: "sidebar.dashboard",
         to: "/",
         icon: GiCampfire,
+    },
+    {
+        id: "inventory",
+        labelKey: "sidebar.inventory",
+        to: "/inventory",
+        icon: GiOpenTreasureChest
     },
     {
         id: "miner",
