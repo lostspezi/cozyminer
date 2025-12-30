@@ -2,8 +2,8 @@ package com.github.lostspezi.backend.security.controller;
 
 import com.github.lostspezi.backend.security.dto.MeResponse;
 import com.github.lostspezi.backend.security.dto.MeResponseMapper;
-import com.github.lostspezi.backend.user.AppUser;
-import com.github.lostspezi.backend.user.AppUserRepository;
+import com.github.lostspezi.backend.user.model.AppUser;
+import com.github.lostspezi.backend.user.repository.AppUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

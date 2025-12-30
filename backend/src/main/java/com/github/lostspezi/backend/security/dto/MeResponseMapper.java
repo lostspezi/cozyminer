@@ -1,7 +1,7 @@
 package com.github.lostspezi.backend.security.dto;
 
-import com.github.lostspezi.backend.user.AppUser;
-import com.github.lostspezi.backend.user.PlayerLevelMapper;
+import com.github.lostspezi.backend.user.dto.PlayerLevelMapper;
+import com.github.lostspezi.backend.user.model.AppUser;
 
 public final class MeResponseMapper {
 

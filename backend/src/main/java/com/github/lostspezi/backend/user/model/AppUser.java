@@ -1,4 +1,4 @@
-package com.github.lostspezi.backend.user;
+package com.github.lostspezi.backend.user.model;
 
 import lombok.*;
 import net.minidev.json.annotate.JsonIgnore;

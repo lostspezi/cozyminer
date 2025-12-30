@@ -1,8 +1,8 @@
 package com.github.lostspezi.backend.security.service;
 
-import com.github.lostspezi.backend.user.AppUser;
-import com.github.lostspezi.backend.user.AppUserRepository;
-import com.github.lostspezi.backend.user.PlayerLevel;
+import com.github.lostspezi.backend.user.model.AppUser;
+import com.github.lostspezi.backend.user.model.PlayerLevel;
+import com.github.lostspezi.backend.user.repository.AppUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
