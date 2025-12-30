@@ -9,7 +9,7 @@ import type {User} from "./types/user";
 import AccountSettingsPage from "./pages/user/account-settings.page.tsx";
 import NotFoundPage from "./pages/error/not-found.page.tsx";
 import FullScreenLoader from "./components/loading/full-screen-loader.tsx";
-import MinerPage from "./pages/miner/miner.page.tsx";
+import MinerPage from "./features/miner/miner.page.tsx";
 import DashboardPage from "./pages/home/dashboard.page.tsx";
 import NewsPage from "./pages/news/news.page.tsx";
 import ContactPage from "./pages/contact/contact.page.tsx";
