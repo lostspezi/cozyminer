@@ -30,6 +30,7 @@ public class AppUser implements OAuth2User {
     private String discordId;
 
     @Getter
+    @Indexed(unique = true)
     private String username;
 
     @Getter
