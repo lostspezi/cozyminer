@@ -5,10 +5,12 @@ import com.github.lostspezi.backend.security.dto.MeResponseMapper;
 import com.github.lostspezi.backend.user.AppUser;
 import com.github.lostspezi.backend.user.AppUserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,7 +23,7 @@ public class AuthController {
     public MeResponse me(@AuthenticationPrincipal AppUser authUser) {
         AppUser freshUser = userRepository
                 .findById(authUser.getId())
-                .orElseThrow();
+                .orElseThrow(() -> new ResponseStatusException(HttpStatusCode.valueOf(404), "User not found"));
 
         return MeResponseMapper.from(freshUser);
     }

@@ -1,0 +1,10 @@
+{
+  "accountSettings": {
+    "title": "Account Settings",
+    "subtext": "Manage your account settings and preferences.",
+    "dangerZone": "Danger Zone",
+    "dangerZoneDesc": "Actions in this section are permanent and cannot be undone. Deleting your account will remove all your progress, mines, and items forever. Please make sure you are absolutely certain before continuing.",
+    "deleteAccount": "Delete Account",
+    "deleteAccountConfirm": "Are you sure you want to delete your account?"
+  }
+}

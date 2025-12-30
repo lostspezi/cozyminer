@@ -5,10 +5,12 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import enCommon from "./resources/en/common.json";
 import enNavigation from "./resources/en/navigation.json";
 import enError from "./resources/en/error.json";
+import enPages from "./resources/en/pages.json";
 
 import deCommon from "./resources/de/common.json";
 import deNavigation from "./resources/de/navigation.json";
 import deError from "./resources/de/error.json";
+import dePages from "./resources/de/pages.json";
 
 i18n
     .use(LanguageDetector)
@@ -18,7 +20,7 @@ i18n
         supportedLngs: ["en", "de"],
 
         defaultNS: "common",
-        ns: ["common", "navigation", "error"],
+        ns: ["common", "navigation", "error", "pages"],
 
         interpolation: {
             escapeValue: false,
@@ -29,11 +31,13 @@ i18n
                 common: enCommon,
                 navigation: enNavigation,
                 error: enError,
+                pages: enPages,
             },
             de: {
                 common: deCommon,
                 navigation: deNavigation,
                 error: deError,
+                pages: dePages,
             },
         },
     });

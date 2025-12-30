@@ -1,0 +1,10 @@
+{
+  "accountSettings": {
+    "title": "Kontoeinstellungen",
+    "subtext": "Verwalte deine Kontoeinstellungen und Präferenzen.",
+    "dangerZone": "Gefahrenbereich",
+    "dangerZoneDesc": "Aktionen in diesem Bereich sind dauerhaft und können nicht rückgängig gemacht werden. Das Löschen deines Kontos entfernt deinen gesamten Fortschritt, alle Minen und Gegenstände unwiderruflich. Bitte stelle sicher, dass du dir absolut sicher bist, bevor du fortfährst.",
+    "deleteAccount": "Konto löschen",
+    "deleteAccountConfirm": "Bist du sicher, dass du dein Konto löschen möchtest?"
+  }
+}
