@@ -1,6 +1,5 @@
 package com.github.lostspezi.backend.user.service;
 
-import com.github.lostspezi.backend.playerprofile.service.PlayerProfileService;
 import com.github.lostspezi.backend.user.dto.UpdateUserRequest;
 import com.github.lostspezi.backend.user.model.AppUser;
 import com.github.lostspezi.backend.user.repository.AppUserRepository;
@@ -16,12 +15,10 @@ import org.springframework.stereotype.Service;
 public class AppUserService {
 
     private final AppUserRepository userRepository;
-    private final PlayerProfileService playerProfileService;
 
     public void deleteCurrentUser() {
         AppUser currentUser = getFromContext();
 
-        playerProfileService.deletePlayerProfile(currentUser.getPlayerProfileId());
         userRepository.deleteById(currentUser.getId());
 
         SecurityContextHolder.clearContext();
