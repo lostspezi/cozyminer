@@ -21,5 +21,13 @@
     "emailError": "Email must be between 3 and 64 characters long and valid.",
     "updateAccount": "Update account",
     "updateAccountConfirm": "Are you sure you want to update your account information?"
+  },
+  "login": {
+    "deleteSuccess": "Your Account has been successfully deleted. Please login again to register a new account.",
+    "subtext": "A calm idle mining experience focused on comfort, progression, and steady growth.",
+    "descBlockOne": "Start small, gather resources, and slowly improve your mining setup over time.",
+    "descBlockTwo": "Unlock upgrades, automate production, and watch your mine grow even when you are away.",
+    "descBlockThree": "Designed for relaxed play sessions without pressure or competition.",
+    "loginWithDiscord": "Login with Discord"
   }
 }

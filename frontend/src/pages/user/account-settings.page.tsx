@@ -42,7 +42,9 @@ export default function AccountSettingsPage({user, setOnUpdate}: Readonly<Accoun
 
     const onDelete = () => {
         axios.delete("api/v1/users/me")
-            .then(() => globalThis.window.location.reload())
+            .then(() => {
+                globalThis.window.location.href = '/login?delete=true';
+            })
             .catch(console.error);
     };
 

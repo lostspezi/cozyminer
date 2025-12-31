@@ -21,5 +21,13 @@
     "emailError": "Die E-Mail-Adresse muss zwischen 3 und 64 Zeichen lang und gültig sein.",
     "updateAccount": "Konto aktualisieren",
     "updateAccountConfirm": "Möchtest du deine Kontoinformationen wirklich aktualisieren?"
+  },
+  "login": {
+    "deleteSuccess": "Dein Konto wurde erfolgreich gelöscht. Bitte melde dich erneut an, um ein neues Konto zu erstellen.",
+    "subtext": "Ein entspanntes Idle-Mining-Erlebnis mit Fokus auf Komfort, Fortschritt und stetiges Wachstum.",
+    "descBlockOne": "Beginne klein, sammle Ressourcen und verbessere dein Minen-Setup Schritt für Schritt.",
+    "descBlockTwo": "Schalte Upgrades frei, automatisiere die Produktion und beobachte, wie deine Mine selbst im Hintergrund wächst.",
+    "descBlockThree": "Entwickelt für entspannte Spielsessions ohne Druck oder Wettbewerb.",
+    "loginWithDiscord": "Mit Discord anmelden"
   }
 }

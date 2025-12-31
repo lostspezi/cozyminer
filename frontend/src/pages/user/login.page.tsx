@@ -3,6 +3,8 @@ import {Navigate} from "react-router-dom";
 import type {User} from "../../types/user.ts";
 import LoginBg from "../../assets/images/login_bg.png";
 import DarkModeToggle from "../../components/shared/dark-mode-toggle.tsx";
+import {useTranslation} from "react-i18next";
+import LanguageSwitch from "../../components/layout/header/language-switch.tsx";
 
 type LoginProps = {
     user: User | null | undefined;
@@ -15,9 +17,15 @@ export default function LoginPage({
                                   darkMode,
                                   toggleDarkMode,
                               }: Readonly<LoginProps>) {
+    const {t} = useTranslation("pages");
+    const params = new URLSearchParams(globalThis.window.location.search);
+
     if (user) {
         return <Navigate to="/"/>;
+
     }
+
+    const deleteParam = params.get("delete") === "true"
 
     const login = () => {
         globalThis.window.location.href =
@@ -64,26 +72,32 @@ export default function LoginPage({
             p-8 space-y-6
           "
                 >
+                    {/* LANGUAGE SWITCH */}
+                    <div className="flex justify-end mb-4">
+                        <LanguageSwitch/>
+                    </div>
+                    {deleteParam &&
+                        <div className="border-2 border-red-400 p-4 rounded-2xl text-red-400">
+                            <p>{t('login.deleteSuccess')}</p>
+                        </div>
+                    }
                     <h1 className="text-center text-4xl font-semibold tracking-wide">
                         Cozy Miner
                     </h1>
 
                     <p className="text-center text-sm text-stone-600 dark:text-slate-400">
-                        A calm idle mining experience focused on comfort, progression,
-                        and steady growth.
+                        {t('login.subtext')}
                     </p>
 
                     <div className="space-y-3 text-sm leading-relaxed text-stone-700 dark:text-slate-300">
                         <p>
-                            Start small, gather resources, and slowly improve your mining
-                            setup over time.
+                            {t('login.descBlockOne')}
                         </p>
                         <p>
-                            Unlock upgrades, automate production, and watch your mine grow
-                            even when you are away.
+                            {t('login.descBlockTwo')}
                         </p>
                         <p>
-                            Designed for relaxed play sessions without pressure or competition.
+                            {t('login.descBlockThree')}
                         </p>
                     </div>
 
@@ -102,7 +116,7 @@ export default function LoginPage({
             "
                     >
                         <FaDiscord size={22}/>
-                        Login with Discord
+                        {t('login.loginWithDiscord')}
                     </button>
                 </div>
             </div>
