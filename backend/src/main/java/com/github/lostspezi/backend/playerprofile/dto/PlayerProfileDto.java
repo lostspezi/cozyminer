@@ -5,6 +5,7 @@ public record PlayerProfileDto(
         long currentXp,
         long xpForNextLevel,
         long missingXp,
-        int progressPercent
+        int progressPercent,
+        InventoryDto inventory
 ) {
 }

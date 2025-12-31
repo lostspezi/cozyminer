@@ -71,7 +71,7 @@ export default function App() {
                     <Route path="/contact" element={<ContactPage/>}/>
                     <Route path="/imprint" element={<ImprintPage/>}/>
                     <Route path="/privacy-policy" element={<PrivacyPolicyPage/>}/>
-                    <Route path="/inventory" element={<InventoryPage/>}/>
+                    <Route path="/inventory" element={<InventoryPage user={user!}/>}/>
                 </Route>
             </Route>
         </Routes>

@@ -12,4 +12,12 @@ export type PlayerProfile = {
     xpForNextLevel: number;
     missingXp: number;
     progressPercent: number;
+    inventory: PlayerInventory;
 };
+
+export type PlayerInventory = {
+    capacity: number;
+    items: Record<ItemType, number>;
+}
+
+export type ItemType = "IRON_ORE" | "COAL" | "COPPER_ORE"

@@ -1,5 +1,6 @@
 package com.github.lostspezi.backend.playerprofile.model;
 
+import com.github.lostspezi.backend.playerprofile.embedded.Inventory;
 import com.github.lostspezi.backend.playerprofile.embedded.PlayerLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,5 +23,9 @@ public class PlayerProfile {
     private String userId;
 
     private PlayerLevel level;
+
+    private Inventory inventory;
+
+    private long coins;
 
 }
