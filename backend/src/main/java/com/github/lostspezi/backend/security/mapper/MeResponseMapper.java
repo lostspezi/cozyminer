@@ -1,6 +1,6 @@
-package com.github.lostspezi.backend.security.dto;
+package com.github.lostspezi.backend.security.mapper;
 
-import com.github.lostspezi.backend.user.dto.PlayerLevelMapper;
+import com.github.lostspezi.backend.security.dto.MeResponse;
 import com.github.lostspezi.backend.user.model.AppUser;
 
 public final class MeResponseMapper {
@@ -14,7 +14,7 @@ public final class MeResponseMapper {
                 user.getUsername(),
                 user.getAvatarUrl(),
                 user.getEmail(),
-                PlayerLevelMapper.toDto(user.getLevel())
+                user.getPlayerProfileId()
         );
     }
 }

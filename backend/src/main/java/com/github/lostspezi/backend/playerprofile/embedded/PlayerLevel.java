@@ -1,4 +1,4 @@
-package com.github.lostspezi.backend.user.model;
+package com.github.lostspezi.backend.playerprofile.embedded;
 
 public record PlayerLevel(
         int current,

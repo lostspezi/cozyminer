@@ -1,7 +1,8 @@
-package com.github.lostspezi.backend.user.dto;
+package com.github.lostspezi.backend.playerprofile.mapper;
 
-import com.github.lostspezi.backend.user.model.PlayerLevel;
-import com.github.lostspezi.backend.user.util.PlayerLevelCalculator;
+import com.github.lostspezi.backend.playerprofile.dto.PlayerLevelDto;
+import com.github.lostspezi.backend.playerprofile.embedded.PlayerLevel;
+import com.github.lostspezi.backend.playerprofile.service.PlayerLevelCalculator;
 
 public final class PlayerLevelMapper {
 

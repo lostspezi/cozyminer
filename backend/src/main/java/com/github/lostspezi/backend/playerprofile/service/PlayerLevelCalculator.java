@@ -1,6 +1,6 @@
-package com.github.lostspezi.backend.user.util;
+package com.github.lostspezi.backend.playerprofile.service;
 
-import com.github.lostspezi.backend.user.model.PlayerLevel;
+import com.github.lostspezi.backend.playerprofile.embedded.PlayerLevel;
 
 public final class PlayerLevelCalculator {
 

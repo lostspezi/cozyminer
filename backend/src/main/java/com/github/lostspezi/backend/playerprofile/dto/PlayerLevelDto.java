@@ -1,4 +1,4 @@
-package com.github.lostspezi.backend.user.dto;
+package com.github.lostspezi.backend.playerprofile.dto;
 
 public record PlayerLevelDto(
         int current,

@@ -41,7 +41,7 @@ public class AppUser implements OAuth2User {
     private String avatarUrl;
 
     @Getter
-    private PlayerLevel level;
+    private String playerProfileId;
 
     @Transient
     @JsonIgnore

@@ -1,7 +1,7 @@
 package com.github.lostspezi.backend.user.controller;
 
 import com.github.lostspezi.backend.security.dto.MeResponse;
-import com.github.lostspezi.backend.security.dto.MeResponseMapper;
+import com.github.lostspezi.backend.security.mapper.MeResponseMapper;
 import com.github.lostspezi.backend.user.dto.UpdateUserRequest;
 import com.github.lostspezi.backend.user.model.AppUser;
 import com.github.lostspezi.backend.user.service.AppUserService;
