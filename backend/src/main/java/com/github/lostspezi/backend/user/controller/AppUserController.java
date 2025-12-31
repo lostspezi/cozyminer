@@ -1,5 +1,7 @@
 package com.github.lostspezi.backend.user.controller;
 
+import com.github.lostspezi.backend.playerprofile.dto.PlayerProfileDto;
+import com.github.lostspezi.backend.playerprofile.service.PlayerProfileService;
 import com.github.lostspezi.backend.security.dto.MeResponse;
 import com.github.lostspezi.backend.security.mapper.MeResponseMapper;
 import com.github.lostspezi.backend.user.dto.UpdateUserRequest;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 public class AppUserController {
 
     private final AppUserService userService;
+    private final PlayerProfileService playerProfileService;
 
     @DeleteMapping("/me")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -28,6 +31,7 @@ public class AppUserController {
             @Valid @RequestBody UpdateUserRequest request
     ) {
         AppUser updated = userService.updateCurrentUser(request);
-        return MeResponseMapper.from(updated);
+        PlayerProfileDto playerProfile = playerProfileService.getPlayerProfile(updated.getId());
+        return MeResponseMapper.from(updated, playerProfile);
     }
 }

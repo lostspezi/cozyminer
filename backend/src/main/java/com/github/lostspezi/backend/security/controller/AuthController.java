@@ -1,5 +1,7 @@
 package com.github.lostspezi.backend.security.controller;
 
+import com.github.lostspezi.backend.playerprofile.dto.PlayerProfileDto;
+import com.github.lostspezi.backend.playerprofile.service.PlayerProfileService;
 import com.github.lostspezi.backend.security.dto.MeResponse;
 import com.github.lostspezi.backend.security.mapper.MeResponseMapper;
 import com.github.lostspezi.backend.user.model.AppUser;
@@ -18,6 +20,7 @@ import org.springframework.web.server.ResponseStatusException;
 public class AuthController {
 
     private final AppUserRepository userRepository;
+    private final PlayerProfileService playerProfileService;
 
     @GetMapping("/me")
     public MeResponse me(@AuthenticationPrincipal AppUser authUser) {
@@ -25,7 +28,9 @@ public class AuthController {
                 .findById(authUser.getId())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatusCode.valueOf(404), "User not found"));
 
-        return MeResponseMapper.from(freshUser);
+        PlayerProfileDto playerProfile = playerProfileService.getPlayerProfile(freshUser.getId());
+
+        return MeResponseMapper.from(freshUser, playerProfile);
     }
 
 }

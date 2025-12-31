@@ -1,6 +1,6 @@
 package com.github.lostspezi.backend.playerprofile.dto;
 
-public record PlayerLevelDto(
+public record PlayerProfileDto(
         int current,
         long currentXp,
         long xpForNextLevel,
