@@ -6,6 +6,7 @@ type Item = {
     id: string;
     name: string;
     amount: number;
+    image?: string;
 };
 
 type Props = {
@@ -68,7 +69,7 @@ export default function InventoryCategory({
                             {/* PLACEHOLDER ICON */}
                             <div
                                 className="h-10 w-10 rounded-lg bg-stone-200 dark:bg-slate-700 flex items-center justify-center text-xs">
-                                IMG
+                                {item.image ? <img src={item.image} alt={item.id} className="h-auto w-auto"/> : "IMG"}
                             </div>
 
                             <div className="flex-1">

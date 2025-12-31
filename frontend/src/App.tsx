@@ -15,7 +15,7 @@ import NewsPage from "./pages/news/news.page.tsx";
 import ContactPage from "./pages/contact/contact.page.tsx";
 import ImprintPage from "./pages/imprint/imprint.page.tsx";
 import PrivacyPolicyPage from "./pages/privacypolicy/privacy-policy.page.tsx";
-import InventoryPage from "./pages/inventory/inventory.page.tsx";
+import InventoryPage from "./features/inventory/page/inventory.page.tsx";
 
 const THEME_KEY = "cozy-theme";
 

@@ -1,7 +1,10 @@
-import Title from "../../components/shared/title";
-import type {User} from "../../types/user";
-import InventoryCategory from "./inventory-category";
+import Title from "../../../components/shared/title.tsx";
+import type {User} from "../../../types/user.ts";
+import InventoryCategory from "../components/inventory-category.tsx";
 import {GiOre} from "react-icons/gi";
+import IronOreImg from "../../../assets/iron_ore.png";
+import CopperOreImg from "../../../assets/copper_ore.png";
+import CoalImg from "../../../assets/coal.png";
 
 type InventoryPageProps = {
     user: User;
@@ -54,16 +57,19 @@ export default function InventoryPage({user}: Readonly<InventoryPageProps>) {
                         id: "iron",
                         name: "Iron Ore",
                         amount: inventory.items.IRON_ORE ?? 0,
+                        image: IronOreImg,
                     },
                     {
                         id: "copper",
                         name: "Copper Ore",
                         amount: inventory.items.COPPER_ORE ?? 0,
+                        image: CopperOreImg,
                     },
                     {
                         id: "coal",
                         name: "Coal",
                         amount: inventory.items.COAL ?? 0,
+                        image: CoalImg,
                     },
                 ]}
             />
