@@ -6,7 +6,7 @@ type PlayerProgressProps = {
 };
 
 export default function PlayerProgress({user}: Readonly<PlayerProgressProps>) {
-    const {level} = user;
+    const {playerProfile} = user;
     const {t} = useTranslation("navigation");
 
     return (
@@ -19,7 +19,7 @@ export default function PlayerProgress({user}: Readonly<PlayerProgressProps>) {
                     text-stone-500 dark:text-slate-400
                 "
             >
-                Level {level.current} ({level.progressPercent}%)
+                Level {playerProfile.current} ({playerProfile.progressPercent}%)
             </span>
 
             {/* MEDIUM+: Level text */}
@@ -30,7 +30,7 @@ export default function PlayerProgress({user}: Readonly<PlayerProgressProps>) {
                     text-stone-500 dark:text-slate-400
                 "
             >
-                Level {level.current}
+                Level {playerProfile.current}
             </span>
 
             {/* MEDIUM+: Progress Bar */}
@@ -54,7 +54,7 @@ export default function PlayerProgress({user}: Readonly<PlayerProgressProps>) {
                         bg-emerald-500 dark:bg-emerald-400
                         transition-all duration-300
                     "
-                    style={{width: `${level.progressPercent}%`}}
+                    style={{width: `${playerProfile.progressPercent}%`}}
                 />
 
                 {/* Percentage text inside bar */}
@@ -68,7 +68,7 @@ export default function PlayerProgress({user}: Readonly<PlayerProgressProps>) {
                         pointer-events-none
                     "
                 >
-                    {level.progressPercent}%
+                    {playerProfile.progressPercent}%
                 </span>
             </div>
 
@@ -80,7 +80,7 @@ export default function PlayerProgress({user}: Readonly<PlayerProgressProps>) {
                     text-stone-500 dark:text-slate-400
                 "
             >
-                {t("playerProgress.missingXp", {xp: level.missingXp})}
+                {t("playerProgress.missingXp", {xp: playerProfile.missingXp})}
             </span>
         </div>
     );

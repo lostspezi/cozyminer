@@ -3,10 +3,10 @@ export type User = {
     username: string;
     avatarUrl: string;
     email: string;
-    level: PlayerLevel;
+    playerProfile: PlayerProfile;
 }
 
-export type PlayerLevel = {
+export type PlayerProfile = {
     current: number;
     currentXp: number;
     xpForNextLevel: number;
