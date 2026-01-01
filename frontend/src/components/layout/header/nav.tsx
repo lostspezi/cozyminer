@@ -3,7 +3,6 @@ import {useNavigate} from "react-router-dom";
 import type {User} from "../../../types/user.ts";
 import AccountMenu from "../navigation/account/account-menu.tsx";
 import LanguageSwitch from "./language-switch.tsx";
-import PlayerProgress from "./player-progress.tsx";
 import DarkModeToggle from "../../shared/dark-mode-toggle.tsx";
 
 type NavProps = {
@@ -47,9 +46,6 @@ export default function Nav({
             <div className="font-semibold tracking-wide">
                 Cozy Miner
             </div>
-
-            {/* CENTER */}
-            <PlayerProgress user={user}/>
 
             {/* RIGHT */}
             <div ref={menuRef} className="flex items-center justify-end gap-2">

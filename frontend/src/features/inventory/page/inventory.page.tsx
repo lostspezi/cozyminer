@@ -1,78 +1,28 @@
 import Title from "../../../components/shared/title.tsx";
-import type {User} from "../../../types/user.ts";
-import InventoryCategory from "../components/inventory-category.tsx";
-import {GiOre} from "react-icons/gi";
-import IronOreImg from "../../../assets/iron_ore.png";
-import CopperOreImg from "../../../assets/copper_ore.png";
-import CoalImg from "../../../assets/coal.png";
 
-type InventoryPageProps = {
-    user: User;
-};
-
-export default function InventoryPage({user}: Readonly<InventoryPageProps>) {
-    const {inventory} = user.playerProfile;
-
-    const usedSlots = Object.values(inventory.items).reduce(
-        (sum, v) => sum + (v ?? 0),
-        0
-    );
-
-    const percent = Math.min(
-        100,
-        Math.round((usedSlots / inventory.capacity) * 100)
-    );
-
+export default function InventoryPage() {
     return (
-        <div className="space-y-6">
+        <>
             <Title
                 headliner="Inventory"
                 subtext="Manage your collected resources."
             />
-
-            {/* CAPACITY */}
+            <h2 className="text-stone-600 dark:text-slate-300 font-bold text-xl mb-1">Equipment</h2>
             <div
-                className="rounded-xl border border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 space-y-2">
-                <div className="flex justify-between text-sm text-stone-500 dark:text-slate-400">
-                    <span>Capacity</span>
-                    <span>
-                        {usedSlots} / {inventory.capacity}
-                    </span>
+                className="border-2 border-stone-600 dark:border-slate-300 rounded-lg p-2 flex flex-row gap-2 justify-between">
+                <div>
+                    <h3 className="text-stone-600 dark:text-slate-300 font-bold text-lg text-center mb-1">Helmet</h3>
+                    <div className="w-20 h-20 bg-stone-600 dark:bg-slate-300 rounded-md"/>
                 </div>
-
-                <div className="h-3 rounded-full bg-stone-200 dark:bg-slate-700 overflow-hidden">
-                    <div
-                        className="h-full bg-emerald-500 transition-all"
-                        style={{width: `${percent}%`}}
-                    />
+                <div>
+                    <h3 className="text-stone-600 dark:text-slate-300 font-bold text-lg text-center mb-1">Gloves</h3>
+                    <div className="w-20 h-20 bg-stone-600 dark:bg-slate-300 rounded-md"/>
+                </div>
+                <div>
+                    <h3 className="text-stone-600 dark:text-slate-300 font-bold text-lg text-center mb-1">Tool</h3>
+                    <div className="w-20 h-20 bg-stone-600 dark:bg-slate-300 rounded-md"/>
                 </div>
             </div>
-
-            {/* CATEGORIES */}
-            <InventoryCategory
-                title="Ore"
-                icon={GiOre}
-                items={[
-                    {
-                        id: "iron",
-                        name: "Iron Ore",
-                        amount: inventory.items.IRON_ORE ?? 0,
-                        image: IronOreImg,
-                    },
-                    {
-                        id: "copper",
-                        name: "Copper Ore",
-                        amount: inventory.items.COPPER_ORE ?? 0,
-                        image: CopperOreImg,
-                    },
-                    {
-                        id: "coal",
-                        name: "Coal",
-                        amount: inventory.items.COAL ?? 0,
-                        image: CoalImg,
-                    },
-                ]}
-            />
-        </div>
+        </>
     );
 }
