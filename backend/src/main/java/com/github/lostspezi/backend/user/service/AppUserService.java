@@ -1,5 +1,6 @@
 package com.github.lostspezi.backend.user.service;
 
+import com.github.lostspezi.backend.security.service.AuthContext;
 import com.github.lostspezi.backend.user.dto.UpdateUserRequest;
 import com.github.lostspezi.backend.user.model.AppUser;
 import com.github.lostspezi.backend.user.repository.AppUserRepository;
@@ -17,7 +18,7 @@ public class AppUserService {
     private final AppUserRepository userRepository;
 
     public void deleteCurrentUser() {
-        AppUser currentUser = getFromContext();
+        AppUser currentUser = AuthContext.getCurrentUser();
 
         userRepository.deleteById(currentUser.getId());
 
@@ -27,7 +28,7 @@ public class AppUserService {
     }
 
     public AppUser updateCurrentUser(@NonNull UpdateUserRequest request) {
-        AppUser user = getFromContext();
+        AppUser user = AuthContext.getCurrentUser();
 
         boolean changed = false;
 
@@ -50,21 +51,5 @@ public class AppUserService {
         log.debug("User updated: {}", saved.getId());
 
         return saved;
-    }
-
-    private AppUser getFromContext() {
-        var authentication = SecurityContextHolder.getContext().getAuthentication();
-
-        if (authentication == null || !authentication.isAuthenticated()) {
-            throw new IllegalStateException("No authenticated user");
-        }
-
-        Object principal = authentication.getPrincipal();
-
-        if (!(principal instanceof AppUser user)) {
-            throw new IllegalStateException("Principal is not AppUser");
-        }
-
-        return user;
     }
 }

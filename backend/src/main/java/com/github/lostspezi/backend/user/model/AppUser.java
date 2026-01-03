@@ -14,6 +14,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -41,7 +42,7 @@ public class AppUser implements OAuth2User {
     private String avatarUrl;
 
     @Getter
-    private String playerProfileId;
+    private Set<String> minerIds;
 
     @Transient
     @JsonIgnore
