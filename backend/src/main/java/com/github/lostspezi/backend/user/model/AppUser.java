@@ -44,6 +44,9 @@ public class AppUser implements OAuth2User {
     @Getter
     private Set<String> minerIds;
 
+    @Getter
+    private String inventoryId;
+
     @Transient
     @JsonIgnore
     private Map<String, Object> attributes;

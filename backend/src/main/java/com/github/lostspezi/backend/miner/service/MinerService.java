@@ -31,4 +31,8 @@ public class MinerService {
         return minerRepository.save(miner);
     }
 
+    public Miner findById(String minerId) {
+        return minerRepository.findById(minerId)
+                .orElseThrow(() -> new IllegalArgumentException("Miner not found with id: " + minerId));
+    }
 }

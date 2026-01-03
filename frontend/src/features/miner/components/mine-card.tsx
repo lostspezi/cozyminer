@@ -1,10 +1,15 @@
 import type {MinerResponse} from "../types/mine.type.ts";
+import axios from "axios";
 
 type Props = {
     mine: MinerResponse;
 };
 
 export default function MineCard({mine}: Readonly<Props>) {
+    const startMining = async () => {
+        await axios.post(`/api/mining/start?minerId=${mine.id}`)
+    }
+
     return (
         <div
             className="
@@ -17,6 +22,7 @@ export default function MineCard({mine}: Readonly<Props>) {
       "
         >
             {mine.oreType}
+            <button type="button" className="ml-4 border-2 rounded-2xl cursor-pointer p-4" onClick={startMining}>Start mining</button>
         </div>
     );
 }

@@ -1,5 +1,7 @@
 package com.github.lostspezi.backend.security.service;
 
+import com.github.lostspezi.backend.inventory.model.Inventory;
+import com.github.lostspezi.backend.inventory.service.InventoryService;
 import com.github.lostspezi.backend.miner.model.Miner;
 import com.github.lostspezi.backend.miner.model.OreType;
 import com.github.lostspezi.backend.miner.service.MinerService;
@@ -19,6 +21,7 @@ public class DiscordOAuth2UserService extends DefaultOAuth2UserService {
 
     private final AppUserRepository userRepository;
     private final MinerService minerService;
+    private final InventoryService inventoryService;
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) {
@@ -47,7 +50,9 @@ public class DiscordOAuth2UserService extends DefaultOAuth2UserService {
                                             .build()
                             );
                             String minerId = initMiner(saved.getId());
+                            String inventoryId = initInventory(saved.getId());
                             minerIds.add(minerId);
+                            saved.setInventoryId(inventoryId);
                             saved.setMinerIds(minerIds);
                             return userRepository.save(saved);
                         }
@@ -64,5 +69,14 @@ public class DiscordOAuth2UserService extends DefaultOAuth2UserService {
                 .build();
         Miner savedMiner = minerService.saveMiner(toSave);
         return savedMiner.getId();
+    }
+
+    private String initInventory(String userId) {
+        Inventory inventory = Inventory.builder()
+                .userId(userId)
+                .ores(new HashMap<>())
+                .build();
+        inventoryService.saveInventory(inventory);
+        return inventory.getId();
     }
 }
